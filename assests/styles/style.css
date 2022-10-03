@@ -1,0 +1,32 @@
+:root {
+	--body-bknd-color: #0f0c29;
+	--container-bknd-color: linear-gradient(to bottom, #24243e, #302b63, #0f0c29);
+	--old-browser-bknd-color: -webkit-linear-gradient(to bottom, #24243e, #302b63, #0f0c29);
+	--wraper-bknd-color: #30475e;
+	--font-color: #dddddd;
+	--btn-color: #f05454;
+	--correct-answer: #4ecca3;
+	--wrong-answer: #d72323;
+
+	font-size: 62.5%;
+	height: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 1.6rem;
+	min-height: 100%;
+	background: var(--body-bknd-color);
+	color: var(--font-color);
+}
+
+.container {
+	max-width: 2500px;
+	background: var(--container-bknd-color);
+	margin: 0 auto;
+}
