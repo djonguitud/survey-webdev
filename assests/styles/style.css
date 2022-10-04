@@ -12,10 +12,15 @@
 	height: 100%;
 }
 
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 }
 
 body {
@@ -29,4 +34,21 @@ body {
 	max-width: 2500px;
 	background: var(--container-bknd-color);
 	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #d72323;
+}
+
+.answers__wraper {
+	background-color: #4ecca3;
 }
