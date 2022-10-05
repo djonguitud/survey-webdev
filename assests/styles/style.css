@@ -117,13 +117,10 @@ p {
 	display: none;
 }
 
-.alive_wraper {
-	display: block;
-}
-
 .timer__score__wraper {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .answers__wraper {
