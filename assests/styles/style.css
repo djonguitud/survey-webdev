@@ -66,13 +66,26 @@ h2 {
 }
 
 p {
-	font-size: clamp(1.38rem, calc(12px + 0.72vw), 1.5rem);
+	font-size: clamp(1.38rem, calc(12px + 0.72vw), 2.3rem);
 	line-height: 1.1;
 	font-weight: 600;
 	/* text-shadow: 2px 2px var(--body-bknd-color); */
 }
 
-/** Default wraper style */
+.answers__list__wraper li {
+	list-style: none;
+	font-weight: 400;
+	font-size: clamp(1.035rem, calc(12px + 0.54vw), 2rem);
+	line-height: 1.1;
+}
+
+.question-sntc {
+	text-align: justify;
+	text-justify: distribute;
+	margin-top: 2em;
+}
+
+/** Default wrapers styles */
 
 .main__wraper {
 	background: rgba(48, 71, 94, 0.61);
@@ -84,7 +97,7 @@ p {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 0.5em;
+	position: relative;
 }
 
 .welcome__wraper {
@@ -101,6 +114,31 @@ p {
 
 .hidden__wraper {
 	display: none;
+}
+
+.alive_wraper {
+	display: block;
+}
+
+.timer__score__wraper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.answers__wraper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	margin-top: 3em;
+}
+
+.answers__list__wraper {
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 }
 
 /** Components style buttons, li, questions, timer, etc.. */
@@ -144,4 +182,9 @@ p {
 	cursor: not-allowed;
 	background: rgba(0, 0, 0, 0.08);
 	color: rgba(0, 0, 0, 0.3);
+}
+
+.answer-number {
+	margin-right: 1em;
+	font-weight: 700;
 }
