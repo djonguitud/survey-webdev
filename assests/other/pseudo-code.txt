@@ -1,0 +1,21 @@
+Style orders
+
+answers__wraper
+-background blur
+-min height
+-padding
+
+Client History
+
+CONSIDERANDO que estoy tomando un cuestionario de código
+CUANDO hago clic en el botón de empezar
+ENTONCES un cronómetro inicia y se me presenta una pregunta
+CUANDO respondo una pregunta
+ENTONCES se me presenta con otra pregunta
+CUANDO respondo una pregunta incorrectamente
+ENTONCES cierto tiempo es restado del reloj
+CUANDO todas las preguntas son respondidas o el cronómetro llega a 0 
+ENTONCES el juego se termina
+CUANDO el juego se termina
+ENTONCES puedo guardar mis iniciales y puntaje
+GIVEN I am taking a code quiz
