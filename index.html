@@ -8,13 +8,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700&display=swap" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700&display=swap"
+			rel="stylesheet" />
 		<link rel="stylesheet" href="./assests/styles/reset.css" />
 		<link rel="stylesheet" href="./assests/styles/style.css" />
 	</head>
 	<body>
 		<div class="container" aria-label="Contenedor responsivo">
-			<section class="main__wraper">
+			<!-- The main wraper is appearing cause there is no content -->
+			<section class="main__wraper" id="main">
 				<div class="welcome__wraper card">
 					<h1>
 						Web Development <br />
@@ -22,34 +25,56 @@
 					</h1>
 					<h2>¿Cuánto sabes de desarrollo web?</h2>
 					<p>Conoce tu score dando inicio</p>
-					<div class="btn__wraper"><button id="btn-start">Iniciar</button></div>
+					<div class="btn__wraper"><button class="btn">Iniciar</button></div>
 				</div>
 			</section>
-			<section class="hidden__wraper questions__wraper main__wraper">
-				<div class="card" data-q1="question-one">
-					<div class="timer__score__wraper">
-						<div class="score__wraper">
-							<p id="score">Score: 00</p>
-						</div>
-						<div class="timer__wraper">
-							<p id="timer"></p>
-						</div>
-					</div>
-					<p class="question-sntc">Pregunta: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui sapiente dignissimos modi sed. Veritatis, sed.</p>
+			<section class="questions__wraper main__wraper hidden__wraper">
+				<div class="card card-color">
+					<p id="timer"></p>
 					<div class="answers__wraper">
-						<ul class="answers__list__wraper">
+						<p class="question-sntc" id="question">
+							Si hablamos de CSS3 y en tema de posición. ¿Cuál es el contexto de la posición
+							absoluta?
+						</p>
+						<ol class="answers__list__wraper" id="click-dgtn">
 							<!-- Check delegation for clicking inside any answer -->
-							<li><span class="answer-number">1:</span>Lorem, ipsum dolor.</li>
-							<li><span class="answer-number">2:</span>Lorem, ipsum dolor.</li>
-							<li><span class="answer-number">3:</span>Lorem, ipsum dolor.</li>
-							<li><span class="answer-number">4:</span>Lorem, ipsum dolor.</li>
-							<li><span class="answer-number">5:</span>Lorem, ipsum dolor.</li>
-						</ul>
+							<li class="answer-item wrong">
+								Esconder algún elemento HTML5 usando código Javascript
+							</li>
+							<li class="answer-item">Wrong</li>
+							<li class="answer-item correct">Correct</li>
+							<li class="answer-item">Wrong</li>
+							<li class="answer-item">Wrong</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+
+			<!-- FORM LAST MESSAGE -->
+			<section class="main__wraper hidden__wraper" id="last">
+				<div class="card card-color">
+					<div class="form__wraper">
+						<form class="form-sub" action="#">
+							<p class="score-item">Score: <span id="score">00</span></p>
+							<li>
+								<label for="name">Escribe tus iniciales:</label>
+								<input
+									type="text"
+									name="name"
+									id="iniciales"
+									placeholder="Tus iniciales"
+									size="25"
+									required />
+								<!-- If anything is typed, put an alert on red -->
+							</li>
+							<li>
+								<input class="btn" type="submit" value="Submit" />
+							</li>
+						</form>
 					</div>
 				</div>
 			</section>
 		</div>
-
 		<script src="./assests/scripts/script.js" async defer></script>
 	</body>
 </html>

@@ -9,7 +9,9 @@
 	--btn-color: #f05454;
 	--correct-answer: #4ecca3;
 	--wrong-answer: #d72323;
-	--basic-familiy-font: 'Montserrat', system-ui, -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--basic-familiy-font: 'Montserrat', system-ui, -apple-system, 'BlinkMacSystemFont', 'Segoe UI',
+		'Roboto', Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-clock: 'Orbitron', sans-serif;
 
 	font-size: 62.5%;
 	height: 100%;
@@ -43,11 +45,11 @@ body {
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	/* padding: 2.5em 3em 1em 3em; */
+	padding: 2em 1em 2em 1em;
 }
 
 h1 {
-	font-size: clamp(2.9rem, calc(12px + 3.3vw), 3.45rem);
+	font-size: clamp(3.188rem, calc(12px + 4.125vw), 4.313rem);
 	line-height: 1.1;
 	font-weight: 700;
 	text-align: center;
@@ -56,33 +58,33 @@ h1 {
 }
 
 h2 {
-	font-size: clamp(1.9rem, calc(12px + 1.8vw), 2.25rem);
+	font-size: clamp(2.625rem, calc(12px + 3vw), 3.375rem);
 	line-height: 1.1;
-	font-weight: 600;
+	font-weight: 400;
 	text-align: center;
 	text-justify: distribute;
 	margin-bottom: 1em;
 	/* text-shadow: 3px 3px var(--body-bknd-color); */
 }
 
-p {
-	font-size: clamp(1.5rem, calc(12px + 0.72vw), 2.3rem);
-	line-height: 1.1;
-	font-weight: 600;
-	/* text-shadow: 2px 2px var(--body-bknd-color); */
+h3 {
+	text-align: center;
 }
 
-.answers__list__wraper li {
-	list-style: none;
-	font-weight: 400;
-	font-size: clamp(1.035rem, calc(12px + 0.54vw), 2rem);
+p {
+	font-size: clamp(1.725rem, calc(12px + 0.9vw), 1.875rem);
 	line-height: 1.1;
+	font-weight: 400;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	hyphens: auto;
 }
 
 .question-sntc {
 	text-align: justify;
 	text-justify: distribute;
-	margin-top: 2em;
+	/* margin-top: 2em; */
+	font-weight: 400;
 }
 
 /** Default wrapers styles */
@@ -92,13 +94,13 @@ p {
 	border-radius: 5px;
 	box-shadow: 15px 20px 6px -2px rgba(0, 0, 0, 0.72);
 	backdrop-filter: blur(11.2px);
-	width: 55%;
-	min-width: 290px;
+	max-width: 800px;
+	min-width: 300px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	margin-bottom: 5em;
+	padding: 1.5em;
 }
 
 .welcome__wraper {
@@ -109,24 +111,22 @@ p {
 }
 
 .card {
-	min-height: 450px;
-	padding: 1.5em;
+	min-height: 400px;
+	padding: 2em 2em 2em 2em;
+}
+
+.card-color {
+	background-color: var(--wraper-bknd-color);
 }
 
 .hidden__wraper {
 	display: none;
 }
 
-.timer__score__wraper {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
 .answers__wraper {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: flex-start;
 	margin-top: 3em;
 }
@@ -136,7 +136,44 @@ p {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	align-items: flex-start;
+	min-width: 100%;
+	margin-top: 2em;
+	padding: 1.5em 0 1em 1em;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	hyphens: auto;
+	text-align: left;
+	font-size: clamp(0.5rem, calc(12px + 0.48vw), 1.9rem);
+	font-weight: 400;
+}
+
+.form__wraper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
+}
+
+.form-sub {
+	width: 100%;
+	min-height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 2em;
+	background-color: #24243e;
+}
+
+.form-sub p,
+.form-sub li {
+	width: 100%;
+}
+
+.form-sub li:last-of-type {
+	align-self: center;
+	text-align: center;
 }
 
 /** Components style buttons, li, questions, timer, etc.. */
@@ -146,14 +183,13 @@ p {
 	text-align: center;
 }
 
-#btn-start {
-	align-items: center;
+.btn {
 	background-color: var(--btn-color);
 	color: var(--font-color);
 	border: 0;
 	border-radius: 50px;
 	cursor: pointer;
-	font-size: clamp(1.2rem, calc(12px + 0.48vw), 1.8rem);
+	font-size: clamp(1.6rem, calc(12px + 0.48vw), 1.9rem);
 	line-height: 1.1;
 	font-weight: 600;
 	max-width: 480px;
@@ -165,24 +201,91 @@ p {
 	box-shadow: 5px 18px 15px -2px rgba(0, 0, 0, 0.72);
 }
 
-#btn-start:hover,
-#btn-start:focus {
+.btn:hover,
+.btn:focus {
 	background-color: var(--correct-answer);
 	color: var(--font-color);
 }
 
-#btn-start:active {
+.btn:active {
 	background: var(--body-bknd-color);
 	color: rgb(255, 255, 255, 0.7);
 }
 
-#btn-active:disabled {
+/* .btn-active:disabled {
 	cursor: not-allowed;
 	background: rgba(0, 0, 0, 0.08);
 	color: rgba(0, 0, 0, 0.3);
+} */
+
+/* TODO Creat wrong and correct answers with a cross or check, depending on */
+
+.answer-item {
+	padding: 0.5em;
+	margin-bottom: 1em;
 }
 
-.answer-number {
-	margin-right: 1em;
+.wrong:active {
+	min-width: 80%;
+	border: var(--wrong-answer) solid 1.5px;
+	color: var(--wrong-answer);
+	border-radius: 50px;
+}
+
+.correct:active {
+	min-width: 80%;
+	border: var(--correct-answer) solid 1.5px;
+	color: var(--correct-answer);
+	border-radius: 50px;
+	padding: 0.5em;
+}
+
+.wrong:active::after {
+	content: '✖';
+	float: right;
+}
+
+.correct:active::after {
+	content: '✔︎';
+	float: right;
+}
+
+#timer {
 	font-weight: 700;
+	float: right;
+}
+
+.score-item {
+	font-weight: 600;
+}
+
+form li {
+	margin-top: 2em;
+	list-style: none;
+}
+
+label {
+	display: block;
+	font-weight: 400;
+	margin-bottom: 0.5em;
+	font-size: 12px;
+}
+
+#iniciales {
+	border: none;
+	border-radius: 5px;
+	padding: 0.5em 0 0.5em 0.5em;
+	transition: 0.2s;
+}
+
+#iniciales:hover,
+#iniciales:active {
+	border: var(--correct-answer) solid 2.5px;
+	color: var(--wraper-bknd-color);
+	cursor: text;
+	outline: none;
+}
+
+#iniciales:focus {
+	outline: 0;
 }
