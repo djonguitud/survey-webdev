@@ -162,22 +162,22 @@ function questionbox() {
 	//Remove and set the class for displaying box question
 	elQuestionWraper.classList.remove('hidden__wraper');
 	elQuestionWraper.classList.add('main__wraper');
-	questionSet(questions, 0, questions[0].q1);
+	questionSet(0, 'q1', 'answer', 'answer');
 	timer;
 }
 
 //! Set the group question & answers
-function questionSet(qstn, index, prop) {
+//Adding parameters to change the group of questions and answers when calling the function
+function questionSet(index, qstn, awr, awrNum) {
 	let content = `
-		<p class="question-sntc" id="question">${qstn[index][prop]}</p>
+		<p class="question-sntc" id="question">${questions[index][qstn]}</p>
 		<ol class="answers__list__wraper" id="click-dgtn">
-			<li class="answer-item wrong"></li>
-			<li class="answer-item"></li>
-			<li class="answer-item correct"></li>
-			<li class="answer-item"></li>
-			<li class="answer-item"></li>
-		</ol>
-				`;
+			<li class="answer-item wrong">${questions[index][awr + '1'][awrNum]}</li>
+			<li class="answer-item">${questions[index][awr + '2'][awrNum]}</li>
+			<li class="answer-item correct">${questions[index][awr + '3'][awrNum]}</li>
+			<li class="answer-item">${questions[index][awr + '4'][awrNum]}</li>
+			<li class="answer-item">${questions[index][awr + '5'][awrNum]}</li>
+		</ol>`;
 
 	elAnswersWraper.innerHTML = content;
 }
@@ -223,6 +223,20 @@ function questionSet(qstn, index, prop) {
 	elAnswersList[2].textContent = questions[0].answer3;
 	elAnswersList[3].textContent = questions[0].answer4;
 	elAnswersList[4].textContent = questions[0].answer5; */
+
+/* 
+let content = `
+		<p class="question-sntc" id="question">${qstn[index][prop]}</p>
+		<ol class="answers__list__wraper" id="click-dgtn">
+			<li class="answer-item wrong"></li>
+			<li class="answer-item"></li>
+			<li class="answer-item correct"></li>
+			<li class="answer-item"></li>
+			<li class="answer-item"></li>
+		</ol>
+				`;
+
+*/
 
 //! Change group of questions and answers
 
