@@ -167,7 +167,6 @@ function questionbox() {
 }
 
 //! Set the group question & answers
-//Adding parameters to change the group of questions and answers when calling the function
 function questionSet(index, qstn, awr, awrNum) {
 	let content = `
 		<p class="question-sntc" id="question">${questions[index][qstn]}</p>
