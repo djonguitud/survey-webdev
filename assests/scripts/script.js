@@ -23,7 +23,7 @@ let questions = [
 		q1: 'Si hablamos de HTML5. ¿Cuál de estos NO es un elemento semántico?',
 		answer1: {
 			answer: 'Div',
-			correct: false,
+			correct: true,
 		},
 		answer2: {
 			answer: 'Section',
@@ -62,7 +62,7 @@ let questions = [
 		},
 		answer5: {
 			answer: 'Su elemento padre con posición relative.',
-			correct: false,
+			correct: true,
 		},
 	},
 	{
@@ -73,7 +73,7 @@ let questions = [
 		},
 		answer2: {
 			answer: 'Una operación que genera un producto.',
-			correct: false,
+			correct: true,
 		},
 		answer3: {
 			answer: 'El producto de una función.',
@@ -104,7 +104,7 @@ let questions = [
 		},
 		answer4: {
 			answer: 'Declarar una variable local con el mismo nombre que una global.',
-			correct: false,
+			correct: true,
 		},
 		answer5: {
 			answer: 'Agregar un estilo de sombra a algún elemento.',
@@ -127,7 +127,7 @@ let questions = [
 		},
 		answer4: {
 			answer: '!important',
-			correct: false,
+			correct: true,
 		},
 		answer5: {
 			answer: 'Un style en línea',
@@ -162,80 +162,65 @@ function questionbox() {
 	//Remove and set the class for displaying box question
 	elQuestionWraper.classList.remove('hidden__wraper');
 	elQuestionWraper.classList.add('main__wraper');
-	questionSet(0, 'q1', 'answer', 'answer');
+	questionSet(4);
 	timer;
 }
 
 //! Set the group question & answers
-function questionSet(index, qstn, awr, awrNum) {
-	let content = `
-		<p class="question-sntc" id="question">${questions[index][qstn]}</p>
-		<ol class="answers__list__wraper" id="click-dgtn">
-			<li class="answer-item wrong">${questions[index][awr + '1'][awrNum]}</li>
-			<li class="answer-item">${questions[index][awr + '2'][awrNum]}</li>
-			<li class="answer-item correct">${questions[index][awr + '3'][awrNum]}</li>
-			<li class="answer-item">${questions[index][awr + '4'][awrNum]}</li>
-			<li class="answer-item">${questions[index][awr + '5'][awrNum]}</li>
-		</ol>`;
-
-	elAnswersWraper.innerHTML = content;
+function questionSet(index) {
+	switch (index) {
+		case 0:
+			elAnswersWraper.innerHTML = `<p class="question-sntc" id="question">${questions[index]['q1']}</p>
+			<ol class="answers__list__wraper" id="click-dgtn">
+				<li class="answer-item" data-iscorrect="${questions[index]['answer1']['correct']}">${questions[index]['answer1']['answer']}</li>
+				<li class="answer-item data-iscorrect="${questions[index]['answer2']['correct']}">${questions[index]['answer2']['answer']}</li>
+				<li class="answer-item data-iscorrect="${questions[index]['answer3']['correct']}">${questions[index]['answer3']['answer']}</li>
+				<li class="answer-item data-iscorrect="${questions[index]['answer4']['correct']}">${questions[index]['answer4']['answer']}</li>
+				<li class="answer-item data-iscorrect="${questions[index]['answer5']['correct']}">${questions[index]['answer5']['answer']}</li>
+			</ol>`;
+			break;
+		case 1:
+			elAnswersWraper.innerHTML = `<p class="question-sntc" id="question">${questions[index]['q2']}</p>
+				<ol class="answers__list__wraper" id="click-dgtn">
+					<li class="answer-item" data-iscorrect="${questions[index]['answer1']['correct']}">${questions[index]['answer1']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer2']['correct']}">${questions[index]['answer2']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer3']['correct']}">${questions[index]['answer3']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer4']['correct']}">${questions[index]['answer4']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer5']['correct']}">${questions[index]['answer5']['answer']}</li>
+				</ol>`;
+			break;
+		case 2:
+			elAnswersWraper.innerHTML = `<p class="question-sntc" id="question">${questions[index]['q3']}</p>
+				<ol class="answers__list__wraper" id="click-dgtn">
+					<li class="answer-item" data-iscorrect="${questions[index]['answer1']['correct']}">${questions[index]['answer1']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer2']['correct']}">${questions[index]['answer2']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer3']['correct']}">${questions[index]['answer3']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer4']['correct']}">${questions[index]['answer4']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer5']['correct']}">${questions[index]['answer5']['answer']}</li>
+				</ol>`;
+			break;
+		case 3:
+			elAnswersWraper.innerHTML = `<p class="question-sntc" id="question">${questions[index]['q4']}</p>
+				<ol class="answers__list__wraper" id="click-dgtn">
+					<li class="answer-item" data-iscorrect="${questions[index]['answer1']['correct']}">${questions[index]['answer1']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer2']['correct']}">${questions[index]['answer2']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer3']['correct']}">${questions[index]['answer3']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer4']['correct']}">${questions[index]['answer4']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer5']['correct']}">${questions[index]['answer5']['answer']}</li>
+				</ol>`;
+			break;
+		case 4:
+			elAnswersWraper.innerHTML = `<p class="question-sntc" id="question">${questions[index]['q5']}</p>
+				<ol class="answers__list__wraper" id="click-dgtn">
+					<li class="answer-item" data-iscorrect="${questions[index]['answer1']['correct']}">${questions[index]['answer1']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer2']['correct']}">${questions[index]['answer2']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer3']['correct']}">${questions[index]['answer3']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer4']['correct']}">${questions[index]['answer4']['answer']}</li>
+					<li class="answer-item data-iscorrect="${questions[index]['answer5']['correct']}">${questions[index]['answer5']['answer']}</li>
+				</ol>`;
+			break;
+	}
 }
-
-/* let questions = [
-	{
-		q1: 'Si hablamos de HTML5. ¿Cuál de estos NO es un elemento semántico?',
-		answer1: {
-			answer: 'Div',
-			correct: false,
-		},
-		answer2: {
-			answer: 'Section',
-			correct: false,
-		},
-		answer3: {
-			answer: 'Address',
-			correct: false,
-		},
-		answer4: {
-			answer: 'Main',
-			correct: false,
-		},
-		answer5: {
-			answer: 'Footer',
-			correct: false,
-		},
-	},
- */
-
-/* 	console.log(group[0].qOne);
-	elQuestionDec.textContent = group[0].qOne;
-
-	for (let i = 0; i < group.length; i++) {
-		group[index].textContent = group[index].prop;
-	} */
-
-//We have an array
-//
-/* 	elQuestionDec.textContent = questions[0].qOne;
-	elAnswersList[0].textContent = questions[0].answer1;
-	elAnswersList[1].textContent = questions[0].answer2;
-	elAnswersList[2].textContent = questions[0].answer3;
-	elAnswersList[3].textContent = questions[0].answer4;
-	elAnswersList[4].textContent = questions[0].answer5; */
-
-/* 
-let content = `
-		<p class="question-sntc" id="question">${qstn[index][prop]}</p>
-		<ol class="answers__list__wraper" id="click-dgtn">
-			<li class="answer-item wrong"></li>
-			<li class="answer-item"></li>
-			<li class="answer-item correct"></li>
-			<li class="answer-item"></li>
-			<li class="answer-item"></li>
-		</ol>
-				`;
-
-*/
 
 //! Change group of questions and answers
 
