@@ -9,8 +9,7 @@
 	--btn-color: #f05454;
 	--correct-answer: #4ecca3;
 	--wrong-answer: #d72323;
-	--basic-familiy-font: 'Montserrat', system-ui, -apple-system, 'BlinkMacSystemFont', 'Segoe UI',
-		'Roboto', Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--basic-familiy-font: 'Montserrat', system-ui, -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-clock: 'Orbitron', sans-serif;
 
 	font-size: 62.5%;
@@ -223,31 +222,13 @@ p {
 .answer-item {
 	padding: 0.5em;
 	margin-bottom: 1em;
+	transition: 0.3s ease-out;
 }
 
-.wrong:active {
-	min-width: 80%;
-	border: var(--wrong-answer) solid 1.5px;
-	color: var(--wrong-answer);
-	border-radius: 50px;
-}
-
-.correct:active {
-	min-width: 80%;
-	border: var(--correct-answer) solid 1.5px;
-	color: var(--correct-answer);
-	border-radius: 50px;
-	padding: 0.5em;
-}
-
-.wrong:active::after {
-	content: '✖';
-	float: right;
-}
-
-.correct:active::after {
-	content: '✔︎';
-	float: right;
+.answer-item:hover {
+	color: #f05454;
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 #timer {

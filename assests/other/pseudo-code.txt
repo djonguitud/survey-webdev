@@ -19,3 +19,6 @@ ENTONCES el juego se termina
 CUANDO el juego se termina
 ENTONCES puedo guardar mis iniciales y puntaje
 GIVEN I am taking a code quiz
+
+
+	

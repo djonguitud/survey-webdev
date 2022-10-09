@@ -15,7 +15,7 @@
 	<body>
 		<div class="container" aria-label="Contenedor responsivo">
 			<!-- The main wraper is appearing cause there is no content -->
-			<section class="main__wraper" id="main">
+			<section class="main__wraper" id="welcome">
 				<div class="welcome__wraper card">
 					<h1>
 						Web Development <br />
@@ -26,32 +26,19 @@
 					<div class="btn__wraper"><button class="btn">Iniciar</button></div>
 				</div>
 			</section>
-			<section id="question__wraper" class="hidden__wraper">
+			<!-- Questions card -->
+			<section class="main__wraper hidden__wraper" id="question__wraper">
 				<div class="card card-color">
 					<p id="timer"></p>
 					<div class="answers__wraper"> </div>
 				</div>
 			</section>
-
 			<!-- FORM LAST MESSAGE -->
-			<section class="main__wraper hidden__wraper" id="last">
-				<div class="card card-color">
-					<div class="form__wraper">
-						<form class="form-sub" action="#">
-							<p class="score-item">Score: <span id="score">00</span></p>
-							<li>
-								<label for="name">Escribe tus iniciales:</label>
-								<input type="text" name="name" id="iniciales" placeholder="Tus iniciales" size="25" required />
-								<!-- If anything is typed, put an alert on red -->
-							</li>
-							<li>
-								<input class="btn" type="submit" value="Submit" />
-							</li>
-						</form>
-					</div>
-				</div>
+			<section class="main__wraper hidden__wraper" id="goodbye">
+				<div class="card card-color"> </div>
 			</section>
 		</div>
+		<script src="./assests/scripts/questions.js"></script>
 		<script src="./assests/scripts/script.js" async defer></script>
 	</body>
 </html>
