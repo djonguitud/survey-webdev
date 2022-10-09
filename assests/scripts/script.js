@@ -1,5 +1,9 @@
 'use strict';
 
+/*=============================================
+=            VARIABLES SECTION            =
+=============================================*/
+//! Container Var
 let container = document.querySelector('.container');
 
 //! Welcome elements Var
@@ -10,33 +14,25 @@ let startBtn = document.querySelector('.btn');
 let elQuestionSctn = document.querySelector('#question__wraper');
 let elAnswersWraper = document.querySelector('.answers__wraper');
 
-//! Last stage var
+//! Last stage Var
 let goodbye = document.querySelector('#goodbye');
 
-//!Event Listener
-startBtn.addEventListener('click', startGame);
-
-//!Object Questions var
+//!Object Questions Var
 let index = 0;
 
-//! Score var
-
+//! Score Var
 let score = 0;
 
-//! Feat Timer variables
+//! Feat Timer Var
 let elTimer = document.getElementById('timer');
-let seconds = 1;
-let minute = 5;
+let seconds = 61;
 
-//!Remove welcome card
-function startGame() {
-	elWelcomeSctn.classList.add('hidden__wraper');
-	elWelcomeSctn.classList.remove('main__wraper');
-	addQstnCard();
-}
+/*=====  End of Section comment block  ======*/
 
+/*=============================================
+=            FLOW DOM SECTION          =
+=============================================*/
 //! Add questions card
-
 function addQstnCard() {
 	qstnMarkUp();
 	updateQstn(index);
@@ -49,7 +45,14 @@ function qstnMarkUp() {
 	timer;
 }
 
-//! Add questionMarkup
+//!Remove welcome card
+function startGame() {
+	elWelcomeSctn.classList.add('hidden__wraper');
+	elWelcomeSctn.classList.remove('main__wraper');
+	addQstnCard();
+}
+
+//! Add question box
 function updateQstn(i) {
 	switch (i) {
 		case 0:
@@ -105,56 +108,6 @@ function updateQstn(i) {
 	}
 }
 
-//! Set timer set
-let timer = setInterval(function () {
-	seconds--;
-	elTimer.textContent = `${minute}:${seconds}`;
-
-	if (seconds < 10 && !(minute < 10)) {
-		elTimer.textContent = `${minute}:0${seconds}`;
-	} else if (seconds < 10 && minute < 10) {
-		elTimer.textContent = `0${minute}:0${seconds}`;
-	} else if (minute < 10 && seconds >= 10) {
-		elTimer.textContent = `0${minute}:${seconds}`;
-	}
-
-	if (minute === 0 && seconds === 0) {
-		seconds = 0;
-		minute = 0;
-		clearInterval(timer);
-		elTimer.textContent = `0${minute}:0${seconds}`;
-	} else if (seconds === 0) {
-		minute--;
-		seconds = 59;
-	}
-}, 1000);
-
-//!Delegation event to select correct answer
-
-elAnswersWraper.addEventListener('click', function (event) {
-	let correctAws = event.target.dataset.iscorrect;
-
-	if (correctAws === 'true') {
-		index++;
-		score += 20;
-		updateQstn(index);
-		console.log(index);
-	} else {
-		minute -= 1;
-		quitGame();
-	}
-});
-
-//! Time off
-function quitGame() {
-	if (index >= 4) {
-		lastStage();
-	} else if (minute <= 0) {
-		lastStage();
-		clearInterval(timer);
-	}
-}
-
 //! Add the form wraper for the last stage
 function lastStage() {
 	elQuestionSctn.classList.add('hidden__wraper');
@@ -175,3 +128,51 @@ function lastStage() {
 			</form>
 		</div>`;
 }
+
+/*=====  End of Section comment block  ======*/
+
+/*=============================================
+=           FEATURES SECTION            =
+=============================================*/
+
+//! Set timer set
+let timer = setInterval(function () {
+	seconds--;
+	elTimer.textContent = `${seconds}`;
+	if (seconds === 0) {
+		quitGame();
+	}
+}, 1000);
+
+//! Finish game and jump to last section
+function quitGame() {
+	clearInterval(timer);
+	return lastStage();
+}
+
+/*=====  End of Section comment block  ======*/
+
+/*=============================================
+=            EVENTS SECTION          =
+=============================================*/
+
+//!Event Listener
+startBtn.addEventListener('click', startGame);
+
+//!Delegation event to select correct answer
+
+elAnswersWraper.addEventListener('click', function (event) {
+	let correctAws = event.target.dataset.iscorrect;
+	if (correctAws === 'true') {
+		index++;
+		score += 20;
+		console.log(index);
+		updateQstn(index);
+		index === questions.length ? lastStage() : console.log('index is < quesitons array');
+	} else {
+		seconds -= 10;
+		seconds <= 0 ? quitGame() : false;
+	}
+});
+
+/*=====  End of Section comment block  ======*/
