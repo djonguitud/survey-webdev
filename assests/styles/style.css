@@ -42,28 +42,32 @@ body {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	min-height: 100vh;
-	padding: 2em 1em 2em 1em;
+	padding: 3em 0.5em 0 0.5em;
 }
 
 h1 {
-	font-size: clamp(3.188rem, calc(12px + 4.125vw), 4.313rem);
-	line-height: 1.1;
+	font-size: clamp(2.88rem, calc(12px + 4.125vw), 3.7rem);
+	line-height: 1 em;
 	font-weight: 700;
 	text-align: center;
 	margin-bottom: 1em;
+	letter-spacing: 0.054em;
+	margin-left: auto;
+	margin-right: auto;
 	/* text-shadow: 3px 3px var(--body-bknd-color); */
 }
 
 h2 {
-	font-size: clamp(2.625rem, calc(12px + 3vw), 3.375rem);
+	font-size: clamp(2.222rem, calc(12px + 3vw), 3.375rem);
 	line-height: 1.1;
 	font-weight: 400;
 	text-align: center;
 	text-justify: distribute;
 	margin-bottom: 1em;
+	letter-spacing: 0.238;
 	/* text-shadow: 3px 3px var(--body-bknd-color); */
 }
 
@@ -72,19 +76,28 @@ h3 {
 }
 
 p {
-	font-size: clamp(1.725rem, calc(12px + 0.9vw), 1.875rem);
-	line-height: 1.1;
+	font-size: clamp(1.38rem, calc(12px + 0.72vw), 2.3rem);
+	line-height: 1.3;
 	font-weight: 400;
+	text-align: justify;
+	text-justify: distribute;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	hyphens: auto;
+	letter-spacing: 0.023em;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.question-sntc {
-	text-align: justify;
-	text-justify: distribute;
-	/* margin-top: 2em; */
-	font-weight: 400;
+.answer-item {
+	font-size: clamp(1.1rem, calc(12px + 0.44vw), 1.5rem);
+	line-height: 1.1;
+	padding: 0.5em;
+	margin-bottom: 1em;
+	transition: 0.3s ease-out;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	hyphens: auto;
 }
 
 /** Default wrapers styles */
@@ -95,12 +108,13 @@ p {
 	box-shadow: 15px 20px 6px -2px rgba(0, 0, 0, 0.72);
 	backdrop-filter: blur(11.2px);
 	max-width: 800px;
-	min-width: 300px;
+	min-width: 290px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	padding: 1.5em;
+	padding: 1em;
+	margin: 0 0.5em 0 0.5em;
 }
 
 .welcome__wraper {
@@ -138,7 +152,7 @@ p {
 	justify-content: space-between;
 	align-items: flex-start;
 	min-width: 100%;
-	margin-top: 2em;
+	margin-top: 0.5em;
 	padding: 1.5em 0 1em 1em;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -212,42 +226,10 @@ p {
 	color: rgb(255, 255, 255, 0.7);
 }
 
-/* .btn-active:disabled {
-	cursor: not-allowed;
-	background: rgba(0, 0, 0, 0.08);
-	color: rgba(0, 0, 0, 0.3);
-} */
-
-/* TODO Creat wrong and correct answers with a cross or check, depending on */
-
-.answer-item {
-	padding: 0.5em;
-	margin-bottom: 1em;
-}
-
-.wrong:active {
-	min-width: 80%;
-	border: var(--wrong-answer) solid 1.5px;
-	color: var(--wrong-answer);
-	border-radius: 50px;
-}
-
-.correct:active {
-	min-width: 80%;
-	border: var(--correct-answer) solid 1.5px;
-	color: var(--correct-answer);
-	border-radius: 50px;
-	padding: 0.5em;
-}
-
-.wrong:active::after {
-	content: '✖';
-	float: right;
-}
-
-.correct:active::after {
-	content: '✔︎';
-	float: right;
+.answer-item:hover {
+	color: #f05454;
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 #timer {
