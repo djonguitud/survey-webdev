@@ -122,7 +122,7 @@ function lastStage() {
 	elQuestionSctn.classList.add('hidden__wraper');
 	elQuestionSctn.classList.remove('main__wraper');
 	goodbye.classList.remove('hidden__wraper');
-	elScoreFnl.textContent = score;
+	elScoreFnl.textContent = String(score);
 }
 
 /*=====  End of Section comment block  ======*/
@@ -154,19 +154,20 @@ elAnswersWraper.addEventListener('click', function (event) {
 =            FORM GENERATOR           =
 =============================================*/
 
-//!User info object
-let usersScoresInitials = {
-	userInit: elInicials.value.trim(),
-	userScore: elScoreFnl.textContent,
-};
-
 //!Prevent default last button
 subBtn.addEventListener('click', function (event) {
 	//!Prevent Default
 	event.preventDefault();
+
+	//!User info object
+	let usersScoresInitials = {
+		userInit: elInicials.value.trim(),
+		userScore: elScoreFnl.textContent.trim(),
+	};
 	//!Convert the user object into a JSON file
 	localStorage.setItem('userInfo', JSON.stringify(usersScoresInitials));
-	console.log(elScoreFnl.textContent.trim());
+
+	console.log(elScoreFnl.textContent);
 });
 
 /*=====  End of Section comment block  ======*/
