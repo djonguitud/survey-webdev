@@ -11,6 +11,7 @@ Test prototipo que busca que sus usuarios sepan de su nivel de aprendizaje en el
 ## Demo
 
 -[Visita la página web, haciendo click aqui!](https://djonguitud.github.io/survey-webdev/)
+![Web page demo](/assests/media/survey-demo.png 'Screenshot ')
 
 ## Creador
 
