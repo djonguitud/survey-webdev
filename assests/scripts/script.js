@@ -65,7 +65,7 @@ function startGame() {
 function updateQstn(i) {
 	switch (i) {
 		case 0:
-			elAnswersWraper.innerHTML = `<p class="question-sntc" id="question">${questions[index]['q1']}</p>
+			elAnswersWraper.innerHTML = `<p id="question">${questions[index]['q1']}</p>
 			<ol class="answers__list__wraper" id="click-dgtn">
 				<li class="answer-item" data-iscorrect="${questions[index]['answer1']['correct']}">${questions[index]['answer1']['answer']}</li>
 				<li class="answer-item" data-iscorrect="${questions[index]['answer2']['correct']}">${questions[index]['answer2']['answer']}</li>
@@ -75,7 +75,7 @@ function updateQstn(i) {
 			</ol>`;
 			break;
 		case 1:
-			elAnswersWraper.innerHTML = `<p class="question-sntc" id="question">${questions[index]['q2']}</p>
+			elAnswersWraper.innerHTML = `<p id="question">${questions[index]['q2']}</p>
 				<ol class="answers__list__wraper" id="click-dgtn">
 					<li class="answer-item" data-iscorrect="${questions[index]['answer1']['correct']}">${questions[index]['answer1']['answer']}</li>
 					<li class="answer-item" data-iscorrect="${questions[index]['answer2']['correct']}">${questions[index]['answer2']['answer']}</li>
@@ -85,7 +85,7 @@ function updateQstn(i) {
 				</ol>`;
 			break;
 		case 2:
-			elAnswersWraper.innerHTML = `<p class="question-sntc" id="question">${questions[index]['q3']}</p>
+			elAnswersWraper.innerHTML = `<p id="question">${questions[index]['q3']}</p>
 				<ol class="answers__list__wraper" id="click-dgtn">
 					<li class="answer-item" data-iscorrect="${questions[index]['answer1']['correct']}">${questions[index]['answer1']['answer']}</li>
 					<li class="answer-item" data-iscorrect="${questions[index]['answer2']['correct']}">${questions[index]['answer2']['answer']}</li>
@@ -95,7 +95,7 @@ function updateQstn(i) {
 				</ol>`;
 			break;
 		case 3:
-			elAnswersWraper.innerHTML = `<p class="question-sntc" id="question">${questions[index]['q4']}</p>
+			elAnswersWraper.innerHTML = `<p id="question">${questions[index]['q4']}</p>
 				<ol class="answers__list__wraper" id="click-dgtn">
 					<li class="answer-item" data-iscorrect="${questions[index]['answer1']['correct']}">${questions[index]['answer1']['answer']}</li>
 					<li class="answer-item" data-iscorrect="${questions[index]['answer2']['correct']}">${questions[index]['answer2']['answer']}</li>
@@ -105,7 +105,7 @@ function updateQstn(i) {
 				</ol>`;
 			break;
 		case 4:
-			elAnswersWraper.innerHTML = `<p class="question-sntc" id="question">${questions[index]['q5']}</p>
+			elAnswersWraper.innerHTML = `<p id="question">${questions[index]['q5']}</p>
 				<ol class="answers__list__wraper" id="click-dgtn">
 					<li class="answer-item" data-iscorrect="${questions[index]['answer1']['correct']}">${questions[index]['answer1']['answer']}</li>
 					<li class="answer-item" data-iscorrect="${questions[index]['answer2']['correct']}">${questions[index]['answer2']['answer']}</li>
@@ -157,7 +157,7 @@ elAnswersWraper.addEventListener('click', function (event) {
 //!User info object
 let usersScoresInitials = {
 	userInit: elInicials.value.trim(),
-	userScore: elScoreFnl.textContent.trim(),
+	userScore: elScoreFnl.textContent,
 };
 
 //!Prevent default last button
@@ -166,6 +166,7 @@ subBtn.addEventListener('click', function (event) {
 	event.preventDefault();
 	//!Convert the user object into a JSON file
 	localStorage.setItem('userInfo', JSON.stringify(usersScoresInitials));
+	console.log(elScoreFnl.textContent.trim());
 });
 
 /*=====  End of Section comment block  ======*/
