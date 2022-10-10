@@ -9,7 +9,8 @@
 	--btn-color: #f05454;
 	--correct-answer: #4ecca3;
 	--wrong-answer: #d72323;
-	--basic-familiy-font: 'Montserrat', system-ui, -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--basic-familiy-font: 'Montserrat', system-ui, -apple-system, 'BlinkMacSystemFont', 'Segoe UI',
+		'Roboto', Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-clock: 'Orbitron', sans-serif;
 
 	font-size: 62.5%;
@@ -44,7 +45,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	padding: 2em 1em 2em 1em;
+	padding: 2em 2em 2em 2em;
 }
 
 h1 {
@@ -71,7 +72,7 @@ h3 {
 }
 
 p {
-	font-size: clamp(1.725rem, calc(12px + 0.9vw), 1.875rem);
+	font-size: clamp(1.5rem, calc(12px + 0.9vw), 1.875rem);
 	line-height: 1.1;
 	font-weight: 400;
 	word-wrap: break-word;

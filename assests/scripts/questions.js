@@ -3,53 +3,53 @@
 //! Add question array
 let questions = [
 	{
-		q1: 'Si hablamos de HTML5. ¿Cuál de estos NO es un elemento semántico?',
+		q1: '¿Cuál es la manera recomendada de incrustar un archivo Javascript en el HTML5?',
 		answer1: {
-			answer: 'Div',
+			answer: 'Al último del elemento body',
 			correct: true,
 		},
 		answer2: {
-			answer: 'Section',
+			answer: 'En el elemento head del HTML5',
 			correct: false,
 		},
 		answer3: {
-			answer: 'Address',
+			answer: 'Dejarlo en la carpeta de scripts',
 			correct: false,
 		},
 		answer4: {
-			answer: 'Main',
+			answer: 'Ponerlo en cada línea de código HTML5',
 			correct: false,
 		},
 		answer5: {
-			answer: 'Footer',
+			answer: 'En el elemento Footer del HTML5',
 			correct: false,
 		},
 	},
 	{
-		q2: 'Si hablamos de CSS3 y en tema de posición. ¿Cuál es el contexto de un elemento posicionado absoluto?',
+		q2: '¿Qué pasa si cambias los valores de una Array si está declarado con const?',
 		answer1: {
-			answer: 'El Viewport.',
+			answer: 'Se borra',
 			correct: false,
 		},
 		answer2: {
-			answer: 'Su elemento padre.',
+			answer: 'Marcará un error.',
 			correct: false,
 		},
 		answer3: {
-			answer: 'El Body.',
+			answer: 'Se convierte en declaración var',
 			correct: false,
 		},
 		answer4: {
-			answer: 'Su elemento hermano.',
+			answer: 'No existe la declaración const',
 			correct: false,
 		},
 		answer5: {
-			answer: 'Su elemento padre con posición relative.',
+			answer: 'No marcará error, sigue el curso del código',
 			correct: true,
 		},
 	},
 	{
-		q3: 'Si hablamos de Javascript. ¿Qué significa una expresión?',
+		q3: '¿Qué significa una expresión?',
 		answer1: {
 			answer: 'Crear una variable.',
 			correct: false,
@@ -72,7 +72,7 @@ let questions = [
 		},
 	},
 	{
-		q4: 'Si hablamos de Javascript. ¿Qué significa shadowing?',
+		q4: '¿Qué significa shadowing?',
 		answer1: {
 			answer: 'Esconder algún elemento HTML5 usando código Javascript',
 			correct: false,
@@ -95,25 +95,25 @@ let questions = [
 		},
 	},
 	{
-		q5: 'Si hablamos de CSS. ¿Que selector tiene mayor relevancia o especificidad sobre todos?',
+		q5: '¿Cuántas opciones de declaraciones lógicas existen en Javascript?',
 		answer1: {
-			answer: 'Class',
+			answer: 'Una',
 			correct: false,
 		},
 		answer2: {
-			answer: 'Id',
+			answer: 'Dos',
 			correct: false,
 		},
 		answer3: {
-			answer: 'Div',
+			answer: 'Varias opciones',
 			correct: false,
 		},
 		answer4: {
-			answer: '!important',
+			answer: 'Tres',
 			correct: true,
 		},
 		answer5: {
-			answer: 'Un style en línea',
+			answer: 'No tengo idea',
 			correct: false,
 		},
 	},

@@ -8,7 +8,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700&display=swap" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700&display=swap"
+			rel="stylesheet" />
 		<link rel="stylesheet" href="./assests/styles/reset.css" />
 		<link rel="stylesheet" href="./assests/styles/style.css" />
 	</head>
@@ -30,15 +32,34 @@
 			<section class="main__wraper hidden__wraper" id="question__wraper">
 				<div class="card card-color">
 					<p id="timer"></p>
-					<div class="answers__wraper"> </div>
+					<div class="answers__wraper"></div>
 				</div>
 			</section>
 			<!-- FORM LAST MESSAGE -->
 			<section class="main__wraper hidden__wraper" id="goodbye">
-				<div class="card card-color"> </div>
+				<div class="card card-color">
+					<div class="form__wraper">
+						<form class="form-sub" action="#">
+							<p class="score-item">Score: <span id="score"></span></p>
+							<li>
+								<label for="name">Escribe tus iniciales:</label>
+								<input
+									type="text"
+									name="name"
+									id="iniciales"
+									placeholder="Tus iniciales"
+									size="25"
+									required />
+							</li>
+							<li>
+								<input class="btn" type="submit" value="Submit" id="subBtn" />
+							</li>
+						</form>
+					</div>
+				</div>
 			</section>
 		</div>
 		<script src="./assests/scripts/questions.js"></script>
-		<script src="./assests/scripts/script.js" async defer></script>
+		<script src="./assests/scripts/script.js"></script>
 	</body>
 </html>

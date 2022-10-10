@@ -27,6 +27,11 @@ let score = 0;
 let elTimer = document.getElementById('timer');
 let seconds = 61;
 
+//! Form Var
+let elScoreFnl = document.querySelector('#score');
+let elInicials = document.querySelector('#iniciales');
+let subBtn = document.querySelector('#subBtn');
+
 /*=====  End of Section comment block  ======*/
 
 /*=============================================
@@ -42,7 +47,6 @@ function addQstnCard() {
 function qstnMarkUp() {
 	elQuestionSctn.classList.remove('hidden__wraper');
 	elQuestionSctn.classList.add('main__wraper');
-	timer;
 }
 
 //!Remove welcome card
@@ -50,6 +54,11 @@ function startGame() {
 	elWelcomeSctn.classList.add('hidden__wraper');
 	elWelcomeSctn.classList.remove('main__wraper');
 	addQstnCard();
+	setInterval(function () {
+		seconds--;
+		elTimer.textContent = `${seconds}`;
+		seconds === 0 ? quitGame() : false;
+	}, 1000);
 }
 
 //! Add question box
@@ -113,41 +122,7 @@ function lastStage() {
 	elQuestionSctn.classList.add('hidden__wraper');
 	elQuestionSctn.classList.remove('main__wraper');
 	goodbye.classList.remove('hidden__wraper');
-	goodbye.innerHTML = `<div class='form__wraper'>
-			<form class='form-sub' action='#'>
-				<p class='score-item'>
-				Score: <span id='score'>${score}</span>
-				</p>
-				<li>
-					<label for='name'>Escribe tus iniciales:</label>
-					<input type='text' name='name' id='iniciales' placeholder='Tus iniciales' size='25' required />
-				</li>
-				<li>
-					<input class='btn' type='submit' value='Submit' />
-				</li>
-			</form>
-		</div>`;
-}
-
-/*=====  End of Section comment block  ======*/
-
-/*=============================================
-=           FEATURES SECTION            =
-=============================================*/
-
-//! Set timer set
-let timer = setInterval(function () {
-	seconds--;
-	elTimer.textContent = `${seconds}`;
-	if (seconds === 0) {
-		quitGame();
-	}
-}, 1000);
-
-//! Finish game and jump to last section
-function quitGame() {
-	clearInterval(timer);
-	return lastStage();
+	elScoreFnl.textContent = score;
 }
 
 /*=====  End of Section comment block  ======*/
@@ -156,23 +131,55 @@ function quitGame() {
 =            EVENTS SECTION          =
 =============================================*/
 
-//!Event Listener
+//!Click start game
 startBtn.addEventListener('click', startGame);
 
 //!Delegation event to select correct answer
-
 elAnswersWraper.addEventListener('click', function (event) {
 	let correctAws = event.target.dataset.iscorrect;
 	if (correctAws === 'true') {
 		index++;
 		score += 20;
-		console.log(index);
 		updateQstn(index);
-		index === questions.length ? lastStage() : console.log('index is < quesitons array');
+		index === questions.length ? lastStage() : false;
 	} else {
 		seconds -= 10;
 		seconds <= 0 ? quitGame() : false;
 	}
 });
+
+/*=====  End of Section comment block  ======*/
+
+/*=============================================
+=            FORM GENERATOR           =
+=============================================*/
+
+//!User info object
+let usersScoresInitials = {
+	userInit: elInicials.value.trim(),
+	userScore: elScoreFnl.textContent.trim(),
+};
+
+//!Prevent default last button
+subBtn.addEventListener('click', function (event) {
+	//!Prevent Default
+	event.preventDefault();
+	//!Convert the user object into a JSON file
+	localStorage.setItem('userInfo', JSON.stringify(usersScoresInitials));
+});
+
+/*=====  End of Section comment block  ======*/
+
+/*=============================================
+=           MISC CODE           =
+=============================================*/
+
+//! Finish game and jump to last section
+function quitGame() {
+	clearInterval(timer);
+	return lastStage();
+}
+
+console.log(seconds);
 
 /*=====  End of Section comment block  ======*/
